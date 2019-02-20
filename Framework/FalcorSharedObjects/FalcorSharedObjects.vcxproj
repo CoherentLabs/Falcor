@@ -86,22 +86,22 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugD3D12|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\$(PlatformShortName)\Debug\</OutDir>
+    <OutDir>$(SolutionDir)..\..\Build\bin_WinDesktop_$(Platform)\Debug\</OutDir>
     <IntDir>$(SolutionDir)Bin\Int\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugVK|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\$(PlatformShortName)\Debug\</OutDir>
+    <OutDir>$(SolutionDir)..\..\Build\bin_WinDesktop_$(Platform)\Debug\</OutDir>
     <IntDir>$(SolutionDir)Bin\Int\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVK|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\$(PlatformShortName)\Release\</OutDir>
+    <OutDir>$(SolutionDir)..\..\Build\bin_WinDesktop_$(Platform)\Release\</OutDir>
     <IntDir>$(SolutionDir)Bin\Int\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseD3D12|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Bin\$(PlatformShortName)\Release\</OutDir>
+    <OutDir>$(SolutionDir)..\..\Build\bin_WinDesktop_$(Platform)\Release\</OutDir>
     <IntDir>$(SolutionDir)Bin\Int\$(PlatformShortName)\$(Configuration)\$(ProjectName)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugD3D12|x64'">
