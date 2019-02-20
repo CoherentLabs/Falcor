@@ -246,6 +246,8 @@ namespace Falcor
         /** Begin frame. Should be called once per-frame, this is where we store the previous frame matrices
         */
         void beginFrame();
+
+        const glm::mat4& getViewProjNoJitterMatrix() const { return mViewProjMatNoJitter; }
     private:
         Camera();
 

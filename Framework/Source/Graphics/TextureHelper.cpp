@@ -697,7 +697,7 @@ namespace Falcor
         return nullptr;
     }
 
-    Texture::SharedPtr createTextureFromFile(const std::string& filename, bool generateMipLevels, bool loadAsSrgb, Texture::BindFlags bindFlags)
+    Texture::SharedPtr createTextureFromFile(const std::string& filename, bool generateMipLevels, bool loadAsSrgb, Texture::BindFlags bindFlags, bool premultiplyAlpha)
     {
 #define no_srgb()   \
     if(loadAsSrgb)  \
@@ -715,6 +715,10 @@ namespace Falcor
             Bitmap::UniqueConstPtr pBitmap = Bitmap::createFromFile(filename, kTopDown);
             if(pBitmap)
             {
+                if (premultiplyAlpha)
+                {
+                    pBitmap->premultiplyAlpha();
+                }
                 ResourceFormat texFormat = pBitmap->getFormat();
                 if(loadAsSrgb)
                 {

@@ -41,7 +41,7 @@ namespace Falcor
         \param[in] loadAsSrgb Load the texture using sRGB format. Only valid for 3 or 4 component textures.
         \param[in] bindFlags The bind flags to create the texture with
     */
-    Texture::SharedPtr createTextureFromFile(const std::string& filename, bool generateMipLevels, bool loadAsSrgb, Texture::BindFlags bindFlags = Texture::BindFlags::ShaderResource);
+    Texture::SharedPtr createTextureFromFile(const std::string& filename, bool generateMipLevels, bool loadAsSrgb, Texture::BindFlags bindFlags = Texture::BindFlags::ShaderResource, bool premultiplyAlpha = false);
 
     /*! @} */
 }

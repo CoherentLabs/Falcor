@@ -444,4 +444,19 @@ namespace Falcor
         FreeImage_Save(toFreeImageFormat(fileFormat), pImage, filename.c_str(), flags);
         FreeImage_Unload(pImage);
     }
+
+    void Bitmap::premultiplyAlpha() const
+    {
+        if (mFormat == ResourceFormat::RGBA8Unorm
+            || mFormat == ResourceFormat::BGRA8Unorm)
+        {
+            for (auto i = 0u; i < mWidth * mHeight * 4; i += 4) {
+                const auto alpha = float(mpData[i + 3]) / 255.f;
+
+                mpData[i] = static_cast<unsigned char>(roundf(float(mpData[i]) * alpha));
+                mpData[i + 1] = static_cast<unsigned char>(roundf(float(mpData[i + 1]) * alpha));
+                mpData[i + 2] = static_cast<unsigned char>(roundf(float(mpData[i + 2]) * alpha));
+            }
+        }
+    }
 }

@@ -113,9 +113,11 @@ namespace Falcor
             \param[in] ext The image file extension to get the 
         */
         static FileFormat getFormatFromFileExtension(const std::string& ext);
+
+        void premultiplyAlpha() const;
     private:
         Bitmap() = default;
-        uint8_t* mpData = nullptr;
+        mutable uint8_t* mpData = nullptr;
         uint32_t mWidth = 0;
         uint32_t mHeight = 0;
         ResourceFormat mFormat;
